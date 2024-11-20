@@ -77,7 +77,7 @@ check_ips() {
 notify_telegram() {
     if [[ -n "$TELEGRAM_BOT_TOKEN" && -n "$TELEGRAM_CHAT_ID" ]]; then
         local message="$1"
-        local header='<pre style="background-color: #f0f0f0; color: #333; padding: 10px; border-left: 5px solid #007bff; font-weight: bold;">🚀 MiniLaunch Notification</pre>'
+        local header='<pre style="background-color: #f0f0f0; color: #333; padding: 10px; border-left: 5px solid #007bff; font-weight: bold;">ping 📡 dong 🛎️</pre>'
         local full_message="${header}${message}"
         local url="https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage"
         local params="chat_id=${TELEGRAM_CHAT_ID}&text=$(echo "${full_message}" | jq -sRr @uri)&parse_mode=HTML"
