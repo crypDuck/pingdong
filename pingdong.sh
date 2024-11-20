@@ -92,6 +92,14 @@ notify_telegram() {
     fi
 }
 
+# Function to send a final notification
+send_final_notification() {
+    notify_telegram "⏹️ Monitoring script has been terminated."
+}
+
+# Set up traps to catch termination signals
+trap send_final_notification EXIT
+
 # Initial notification
 notify_telegram "🔍 Starting network monitoring for IPs: ${ip_addresses[*]}"
 
